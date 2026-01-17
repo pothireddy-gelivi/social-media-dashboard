@@ -1,0 +1,782 @@
+.insta-container {
+  max-width: 700px;
+  margin: 30px 200px;
+}
+
+.insta-card {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.insta-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.insta-avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.insta-username {
+  font-weight: 600;
+}
+
+.insta-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.insta-actions {
+  display: flex;
+  gap: 15px;
+  padding: 10px 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.insta-actions span:hover {
+  transform: scale(1.2);
+}
+
+.insta-caption {
+  padding: 0 12px 12px;
+  font-size: 14px;
+}
+.insta-caption .username {
+  font-weight: 600;
+  margin-right: 5px;
+}
+.insta-likes {
+  padding: 0 12px 12px;
+  font-weight: 600;
+}
+.insta-timestamp {
+  padding: 0 12px 12px;
+  font-size: 12px;
+  color: #888;
+}
+.insta-comment-section {
+  border-top: 1px solid #ddd;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+}
+.insta-comment-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+.insta-post-btn {
+  background: none;
+  border: none;
+  color: #0d6efd;
+  font-weight: 600;
+  cursor: pointer;
+}
+.insta-post-btn:disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}
+.insta-post-btn:not(:disabled):hover {
+  text-decoration: underline;
+}
+.insta-no-posts {
+  text-align: center;
+  color: #888;
+  margin-top: 50px;
+  font-size: 18px;
+}
+.insta-loading {
+  text-align: center;
+  color: #888;
+  margin-top: 50px;
+  font-size: 18px;
+}
+.insta-error {
+  text-align: center;
+  color: red;
+  margin-top: 50px;
+  font-size: 18px;
+}
+.insta-new-post {
+  max-width: 500px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+.insta-new-post textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 80px;
+}
+.insta-new-post button {
+  margin-top: 10px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.insta-new-post button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+.insta-new-post button:not(:disabled):hover {
+  background-color: #0b5ed7;
+}
+@media (max-width: 600px) {
+  .insta-container, .insta-new-post {
+    margin: 15px;
+  }
+}
+/* STORIES */
+.stories {
+  display: flex;
+  gap: 15px;
+  padding: 25px 15px;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  margin-bottom: 25px;
+}
+
+.stories::-webkit-scrollbar {
+  display: none;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.story-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #52e90c,#e09508, #fc17ca);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.story-avatar:hover {
+  transform: scale(1.1);
+}
+
+.story-name {
+  font-size: 12px;
+  margin-top: 6px;
+}
+@media (max-width: 600px) {
+  .story-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+/* END OF STORIES */
+/* LIKE ANIMATION */
+@keyframes like-pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.like-animate {
+  animation: like-pop 0.5s ease;
+}
+/* END OF LIKE ANIMATION */
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .insta-card {
+    margin-bottom: 15px;
+  }
+}
+/* END OF RESPONSIVE */
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .insta-card, .insta-new-post, .stories {
+        background: #1e1e1e;
+        border-color: #333;
+    }
+    .insta-caption, .insta-likes, .insta-timestamp, .insta-comment-input {
+        color: #ccc;
+    }
+    .insta-avatar {
+        background-color: #0d6efd;
+        color: white;
+    }
+    }
+/* END OF DARK MODE */
+
+/* ADDITIONAL STYLES */
+.insta-no-stories {
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.insta-no-stories-dark {
+  text-align: center;
+  color: #bbb;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.insta-story-loading {
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.insta-story-error {
+  text-align: center;
+  color: red;
+  margin-top: 20px;
+  font-size: 16px;
+}
+/* END OF ADDITIONAL STYLES */
+
+/* ANIMATION FOR STORY AVATAR */
+@keyframes story-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.story-avatar:hover {
+  animation: story-bounce 0.5s ease;
+}
+/* END OF ANIMATION FOR STORY AVATAR */
+
+/* SMOOTH SCROLLING FOR STORIES */
+.stories {
+  scroll-behavior: smooth;
+}
+/* END OF SMOOTH SCROLLING FOR STORIES */
+/* FIXED POSITION FOR NEW POST BUTTON */
+.new-post-fixed-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.new-post-fixed-btn:hover {
+  background-color: #0b5ed7;
+}
+.new-post-fixed-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.5);
+}
+.new-post-fixed-btn:active {
+  transform: scale(0.95);
+}
+/* END OF FIXED POSITION FOR NEW POST BUTTON */
+/* RESPONSIVE FOR NEW POST BUTTON */
+@media (max-width: 600px) {
+    .new-post-fixed-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+    }
+/* END OF RESPONSIVE FOR NEW POST BUTTON */
+/* DARK MODE FOR NEW POST BUTTON */
+@media (prefers-color-scheme: dark) {
+    .new-post-fixed-btn {
+        background-color: #0b5ed7;
+        color: white;
+    }
+    .new-post-fixed-btn:hover {
+        background-color: #094bb5;
+    }
+    }
+/* END OF DARK MODE FOR NEW POST BUTTON */
+
+/* SMOOTH SCROLL TO TOP */
+.scroll-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.scroll-to-top:hover {
+  background-color: #0b5ed7;
+}
+.scroll-to-top:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.5);
+}
+.scroll-to-top:active {
+  transform: scale(0.95);
+}
+.scroll-to-top-hidden {
+  display: none;
+}
+/* END OF SMOOTH SCROLL TO TOP */
+@media (max-width: 600px) {
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 70px;
+        right: 15px;
+    }
+    }
+/* DARK MODE FOR SCROLL TO TOP */
+@media (prefers-color-scheme: dark) {
+    .scroll-to-top {
+        background-color: #0b5ed7;
+        color: white;
+    }
+    .scroll-to-top:hover {
+        background-color: #094bb5;
+    }
+    }
+/* END OF DARK MODE FOR SCROLL TO TOP */
+/* SMOOTH SCROLLING */
+html {
+  scroll-behavior: smooth;
+}
+/* END OF SMOOTH SCROLLING */
+/* ANIMATION FOR SCROLL TO TOP BUTTON */
+@keyframes scroll-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+.scroll-to-top:hover {
+  animation: scroll-pulse 0.5s ease;
+}
+/* END OF ANIMATION FOR SCROLL TO TOP BUTTON */
+/* VISIBILITY TRANSITION FOR SCROLL TO TOP BUTTON */
+.scroll-to-top {
+  transition: opacity 0.3s ease;
+}
+.scroll-to-top-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/* END OF VISIBILITY TRANSITION FOR SCROLL TO TOP BUTTON */
+/* ADDITIONAL DARK MODE TWEAKS */
+@media (prefers-color-scheme: dark) {
+    .insta-comment-input {
+        background-color: #2c2c2c;
+        border-color: #444;
+        color: #ccc;
+    }
+    .insta-comment-input::placeholder {
+        color: #777;
+    }
+    .insta-new-post textarea {
+        background-color: #2c2c2c;
+        border-color: #444;
+        color: #ccc;
+    }
+    }
+/* END OF ADDITIONAL DARK MODE TWEAKS */
+/* SMOOTH FOCUS TRANSITION FOR INPUTS */
+.insta-comment-input, .insta-new-post textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.insta-comment-input:focus, .insta-new-post textarea:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+/* END OF SMOOTH FOCUS TRANSITION FOR INPUTS */
+/* RESPONSIVE TWEAKS FOR INPUTS */
+@media (max-width: 600px) {
+    .insta-comment-input, .insta-new-post textarea {
+        font-size: 12px;
+    }
+    }
+/* END OF RESPONSIVE TWEAKS FOR INPUTS */
+/* ANIMATION FOR POST BUTTON */
+@keyframes button-press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.insta-post-btn:not(:disabled):active {
+  animation: button-press 0.2s ease;
+}
+/* END OF ANIMATION FOR POST BUTTON */
+/* HOVER EFFECT FOR POST BUTTON */
+.insta-post-btn:not(:disabled):hover {
+  text-decoration: underline;
+  color: #0b5ed7;
+}
+/* END OF HOVER EFFECT FOR POST BUTTON */
+/* DARK MODE TWEAKS FOR BUTTON */
+@media (prefers-color-scheme: dark) {
+    .insta-post-btn:not(:disabled):hover {
+        color: #66b2ff;
+    }
+    }
+/* END OF DARK MODE TWEAKS FOR BUTTON */
+/* SMOOTH SCROLLBAR FOR STORIES */
+.stories {
+  scrollbar-width: thin;
+  scrollbar-color: #0d6efd #e0e0e0;
+}
+.stories::-webkit-scrollbar {
+  height: 6px;
+}
+.stories::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+.stories::-webkit-scrollbar-thumb {
+  background-color: #0d6efd;
+  border-radius: 3px;
+}
+.stories::-webkit-scrollbar-thumb:hover {
+  background-color: #0b5ed7;
+}
+/* END OF SMOOTH SCROLLBAR FOR STORIES */
+@media (prefers-color-scheme: dark) {
+    .stories {
+        scrollbar-color: #66b2ff #2c2c2c;
+    }
+    .stories::-webkit-scrollbar-track {
+        background: #2c2c2c;
+    }
+    .stories::-webkit-scrollbar-thumb {
+        background-color: #66b2ff;
+    }
+    .stories::-webkit-scrollbar-thumb:hover {
+        background-color: #339aff;
+    }
+    }
+/* END OF DARK MODE SCROLLBAR FOR STORIES */  
+/* SMOOTH SCROLLBAR FOR COMMENT SECTION */
+.insta-comment-section {
+  scrollbar-width: thin;
+  scrollbar-color: #0d6efd #e0e0e0;
+}
+.insta-comment-section::-webkit-scrollbar {
+  height: 6px;
+}   
+.insta-comment-section::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+.insta-comment-section::-webkit-scrollbar-thumb {
+  background-color: #0d6efd;
+  border-radius: 3px;
+}
+.insta-comment-section::-webkit-scrollbar-thumb:hover {
+  background-color: #0b5ed7;
+}
+/* END OF SMOOTH SCROLLBAR FOR COMMENT SECTION */
+@media (prefers-color-scheme: dark) {
+    .insta-comment-section {
+        scrollbar-color: #66b2ff #2c2c2c;
+    }
+    .insta-comment-section::-webkit-scrollbar-track {
+        background: #2c2c2c;
+    }
+    .insta-comment-section::-webkit-scrollbar-thumb {
+        background-color: #66b2ff;
+    }
+    .insta-comment-section::-webkit-scrollbar-thumb:hover {
+        background-color: #339aff;
+    }
+    }
+/* END OF DARK MODE SCROLLBAR FOR COMMENT SECTION */
+/* TRANSITION FOR DARK MODE CHANGES */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* END OF TRANSITION FOR DARK MODE CHANGES */
+/* SMOOTH HOVER TRANSITION FOR STORY NAMES */
+.story-name {
+  transition: color 0.3s ease;
+}
+.story-name:hover {
+  color: #0d6efd;
+}
+.story-name:hover {
+  color: #0b5ed7;
+}
+/* END OF SMOOTH HOVER TRANSITION FOR STORY NAMES */
+@media (prefers-color-scheme: dark) {
+    .story-name:hover {
+        color: #66b2ff;
+    }
+    }
+/* END OF DARK MODE HOVER TRANSITION FOR STORY NAMES */
+/* ADDITIONAL RESPONSIVE TWEAKS */
+@media (max-width: 400px) {
+    .insta-avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .story-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    }
+/* END OF ADDITIONAL RESPONSIVE TWEAKS */
+/* SMOOTH TRANSITION FOR CARD SHADOW */
+.insta-card {
+  transition: box-shadow 0.3s ease;
+}
+.insta-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* END OF SMOOTH TRANSITION FOR CARD SHADOW */
+@media (prefers-color-scheme: dark) {
+    .insta-card:hover {
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    }
+    }
+/* END OF DARK MODE TRANSITION FOR CARD SHADOW */
+
+/* RESPONSIVE TWEAKS FOR STORY NAMES */
+@media (max-width: 400px) {
+    .story-name {
+        font-size: 10px;
+    }
+    }
+/* END OF RESPONSIVE TWEAKS FOR STORY NAMES */
+/* DARK MODE TWEAKS FOR SCROLLBARS */
+@media (prefers-color-scheme: dark) {
+    .insta-card::-webkit-scrollbar, .insta-new-post::-webkit-scrollbar {
+        background: #2c2c2c;
+    }
+    .insta-card::-webkit-scrollbar-thumb, .insta-new-post::-webkit-scrollbar-thumb {
+        background-color: #66b2ff;
+    }
+    .insta-card::-webkit-scrollbar-thumb:hover, .insta-new-post::-webkit-scrollbar-thumb:hover {
+        background-color: #339aff;
+    }
+    }
+/* END OF DARK MODE TWEAKS FOR SCROLLBARS */
+/* SMOOTH TRANSITION FOR LIKE ICON COLOR */
+.insta-actions span {
+  transition: color 0.3s ease;
+}
+.insta-actions span:hover {
+  color: #0d6efd;
+}
+.insta-actions span:hover {
+  color: #0b5ed7;
+}
+@media (prefers-color-scheme: dark) {
+    .insta-actions span:hover {
+        color: #66b2ff;
+    }
+    }
+/* END OF SMOOTH TRANSITION FOR LIKE ICON COLOR */
+/* DARK MODE TWEAKS FOR LIKE ICON COLOR */
+@media (prefers-color-scheme: dark) {
+    .insta-actions span {
+        color: #ccc;
+    }
+    }
+/* END OF DARK MODE TWEAKS FOR LIKE ICON COLOR */
+/* SMOOTH TRANSITION FOR NEW POST BUTTON */
+.insta-new-post button {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}   
+.insta-new-post button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.insta-new-post button:active {
+  box-shadow: none;
+}
+.insta-new-post button:hover {
+  background-color: #0b5ed7;
+}
+@media (prefers-color-scheme: dark) {
+    .insta-new-post button:hover {
+        background-color: #339aff;
+    }
+    }
+/* END OF SMOOTH TRANSITION FOR NEW POST BUTTON */
+/* DARK MODE TWEAKS FOR NEW POST BUTTON */
+@media (prefers-color-scheme: dark) {
+    .insta-new-post button {
+        background-color: #0b5ed7;
+        color: white;
+    }
+    .insta-new-post button:hover {
+        background-color: #339aff;
+    }
+    }
+
+/* END OF DARK MODE TWEAKS FOR NEW POST BUTTON */
+/* SMOOTH TRANSITION FOR STORY AVATAR BORDER */
+.story-avatar {
+  transition: border 0.3s ease;
+}
+.story-avatar:hover {
+  border: 2px solid #0d6efd;
+}
+.story-avatar:hover {
+  border: 2px solid #0b5ed7;
+}
+@media (prefers-color-scheme: dark) {
+    .story-avatar:hover {
+        border: 2px solid #66b2ff;
+    }
+    }
+/* END OF SMOOTH TRANSITION FOR STORY AVATAR BORDER */
+/* DARK MODE TWEAKS FOR STORY AVATAR BORDER */
+@media (prefers-color-scheme: dark) {
+    .story-avatar {
+        border: 2px solid #444;
+    }
+    }
+/* END OF DARK MODE TWEAKS FOR STORY AVATAR BORDER */
+/* SMOOTH TRANSITION FOR COMMENT INPUT FOCUS */
+.insta-comment-input:focus {
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.7);
+}
+/* END OF SMOOTH TRANSITION FOR COMMENT INPUT FOCUS */
+@media (prefers-color-scheme: dark) {
+    .insta-comment-input:focus {
+        box-shadow: 0 0 8px rgba(102, 178, 255, 0.7);
+    }
+    }
+/* END OF DARK MODE TWEAKS FOR COMMENT INPUT FOCUS */
+/* SMOOTH TRANSITION FOR NEW POST TEXTAREA FOCUS */
+.insta-new-post textarea:focus {
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.7);
+}
+/* END OF SMOOTH TRANSITION FOR NEW POST TEXTAREA FOCUS */
+@media (prefers-color-scheme: dark) {
+    .insta-new-post textarea:focus {
+        box-shadow: 0 0 8px rgba(102, 178, 255, 0.7);
+    }
+    }
+/* END OF DARK MODE TWEAKS FOR NEW POST TEXTAREA FOCUS */
+/* SMOOTH TRANSITION FOR LIKE ICON SCALE */
+.insta-actions span:hover {
+  transform: scale(1.2);
+}   
+/* END OF SMOOTH TRANSITION FOR LIKE ICON SCALE */
+@media (prefers-color-scheme: dark) {
+    .insta-actions span {
+        color: #ccc;
+    }
+    }
+/* END OF DARK MODE TWEAKS FOR LIKE ICON SCALE */
+/* SMOOTH TRANSITION FOR POST CARD MARGIN */
+.insta-card {
+  transition: margin-bottom 0.3s ease;
+}
+.insta-card:hover {
+  margin-bottom: 30px;
+}
+/* END OF SMOOTH TRANSITION FOR POST CARD MARGIN */
+@media (prefers-color-scheme: dark) {
+    .insta-card:hover {
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    }
+    }
+/* END OF DARK MODE TRANSITION FOR POST CARD MARGIN */
+/* SMOOTH TRANSITION FOR STORIES SCROLL */
+.stories {
+  transition: scroll-behavior 0.3s ease;
+}
+/* END OF SMOOTH TRANSITION FOR STORIES SCROLL */
+@media (prefers-color-scheme: dark) {
+    .stories {
+        background: #1e1e1e;
+        border-color: #333;
+    }
+    }
+/* END OF DARK MODE FOR STORIES */
+/* SMOOTH TRANSITION FOR SCROLL TO TOP BUTTON POSITION */
+.scroll-to-top {
+  transition: bottom 0.3s ease, right 0.3s ease;
+}
+/* END OF SMOOTH TRANSITION FOR SCROLL TO TOP BUTTON POSITION */
+@media (prefers-color-scheme: dark) {
+    .scroll-to-top {
+        background-color: #0b5ed7;
+        color: white;
+    }
+    .scroll-to-top:hover {
+        background-color: #094bb5;
+    }
+    }
+

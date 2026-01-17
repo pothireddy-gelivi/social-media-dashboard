@@ -1,0 +1,48 @@
+.custom-navbar {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  padding: 12px 0;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #eaeaea !important;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff;
+}
+
+.profile-btn {
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+  transform: scale(1.05);
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}

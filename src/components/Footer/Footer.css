@@ -1,0 +1,37 @@
+.footer {
+ 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #abb3b9;
+  border-top: 1px solid #ddd;
+  padding: 8px 0;
+  z-index: 100;
+  text-align: center;
+}
+
+
+/* Text links */
+.footer-text {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 15px;
+  margin-top: 6px;
+  color: #070707;
+}
+
+.footer-text span {
+  cursor: pointer;
+}
+
+.footer-text span:hover {
+  color: #4826e0;
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 13px;
+  margin-top: 4px;
+  color: #0f0f0f;
+}
